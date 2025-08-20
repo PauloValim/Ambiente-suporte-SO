@@ -10,7 +10,12 @@
 
 int main(void)
 {
+        // argv precisa terminar em NULL
+    char *args[] = { "teste", NULL };
+
     printf("pid do Pai: %d\n", getpid());
-    execv("teste", NULL);
+    execv("./teste", args);
     printf("EU TENHO UM SEGREDO PRA CONTAR\n");
 }
+
+
