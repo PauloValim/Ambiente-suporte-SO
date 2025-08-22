@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
     pid_t childpid;
     int i, n;
     if (argc != 2) {
-        fprintf(stderr, "Usage: %s n\n", argv[0]);
+        printf("Usage: %s n\n", argv[0]);
         return 1;
     }
     n = atoi(argv[1]);
@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
         if ((childpid = fork()) <= 0)
             break;
     while(wait(NULL) > 0) ; /* wait for all of your children */
-    fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld\n",
+    printf("i:%d process ID:%ld parent ID:%ld child ID:%ld\n",
             i, (long)getpid(), (long)getppid(), (long)childpid);
     return 0;
 }
